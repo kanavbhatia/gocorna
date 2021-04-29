@@ -1,4 +1,13 @@
-<div class="parentCard">
+<div *ngIf="dataUploaded">
+  <mat-card>
+    <img
+      style="width: 270px; height: 100px; margin-left: 10vw"
+      src="../assets/dietnheal.png"
+    />
+    <h2>Your consultation is succesfully booked</h2>
+  </mat-card>
+</div>
+<div class="parentCard" *ngIf="!dataUploaded">
   <mat-card class="matCard">
     <img style="width: 270px; height: 100px" src="../assets/dietnheal.png" />
     <form [formGroup]="enquiryForm" class="example-form">
@@ -102,12 +111,7 @@
         Date and time for your appointment: {{ date + "  " + time + " pm" }}
       </h3>
       <br /><br /><br /><br />
-      <button
-        type="button"
-        (click)="onSubmit()"
-        mat-raised-button
-        color="primary"
-      >
+      <button (click)="onSubmit()" mat-raised-button color="primary">
         Submit
       </button>
     </form>

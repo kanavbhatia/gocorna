@@ -17,6 +17,7 @@ export class AppComponent {
   // startDate = new Date(2021, 4, 1);
   showTime = false;
   showFinalStatement = false;
+  dataUploaded = false;
 
   enquiryForm = this.fb.group({
     name: [''],
@@ -69,7 +70,9 @@ export class AppComponent {
           console.log(error);
         },
         () => {
+          // window.location.replace('dietnheal.in');
           console.log('data posted successfully');
+          this.dataUploaded = true;
         }
       );
       console.log(this.enquiryForm.value);

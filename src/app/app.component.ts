@@ -21,14 +21,7 @@ export class AppComponent {
 
   enquiryForm = this.fb.group({
     name: [''],
-    age: [''],
-    height: [''],
-    phone: [''],
-    symptoms: [''],
-    existingMedicalCondition: [''],
-    medications: [''],
-    date: [''],
-    time: [''],
+    email: [''],
   });
 
   timeSlots: any;

@@ -1,107 +1,54 @@
 <div *ngIf="dataUploaded">
   <mat-card>
     <img
-      style="width: 270px; height: 100px; margin-left: 10vw"
-      src="../assets/dietnheal.png"
+      style="width: 400px; height: 100px; margin-left: 10vw"
+      src="../assets/logo.jpg"
     />
-    <h2>Your consultation is succesfully booked</h2>
+    <h2>Your Interview is succesfully booked</h2>
   </mat-card>
 </div>
 <div class="parentCard" *ngIf="!dataUploaded">
-  <!-- <img
-    style="
-      height: 116px;
-      margin-top: 0px;
-      z-index: 1;
-      position: absolute;
-      top: 2px;
-      right: -49px;
-    "
-    src="../assets/covid.png"
-  /> -->
   <mat-card class="matCard">
-    <img style="width: 270px; height: 100px" src="../assets/dietnheal.png" />
+    <img style="width: 400px; height: 100px" src="../assets/logo.jpg" />
     <form [formGroup]="enquiryForm" class="example-form">
       <mat-form-field class="example-full-width">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="Name" formControlName="name" />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Age</mat-label>
-        <input matInput type="number" placeholder="Age" formControlName="age" />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Height </mat-label>
         <input
           matInput
-          type="number"
-          placeholder="Height (in cms)"
-          formControlName="height"
-        />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Phone number</mat-label>
+          placeholder="Name"
+          formControlName="name"
+        /> </mat-form-field
+      ><mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
         <input
           matInput
-          type="number"
-          placeholder="Phone number"
-          formControlName="phone"
+          placeholder="Email"
+          type="email"
+          formControlName="email"
         />
       </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Symptoms</mat-label>
-        <textarea
-          matInput
-          placeholder="Symptoms"
-          formControlName="symptoms"
-        ></textarea>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Comorbidities </mat-label>
-        <textarea
-          matInput
-          placeholder="Comorbidities (Existing Medical Conditions)"
-          formControlName="existingMedicalCondition"
-        ></textarea>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Medications </mat-label>
-        <textarea
-          matInput
-          placeholder="Medications"
-          formControlName="medications"
-        ></textarea>
-      </mat-form-field>
-      <h2>Book your consultation</h2>
-      <span *ngFor="let date of ['1/5/2021', '2/5/2021']">
+      <h2>Interview Slots</h2>
+      <span
+        *ngFor="
+          let date of [
+            '15 June 2021',
+            '16 June 2021',
+            '17 June 2021',
+            '18 June 2021',
+            '19 June 2021',
+            '20 June 2021'
+          ]
+        "
+      >
         <button type="button" mat-stroked-button (click)="getDate(date)">
           {{ date }}
         </button>
       </span>
       <br />
-      <!-- 
-      <mat-form-field appearance="fill">
-          <mat-label>Choose a date</mat-label>
-        <input
-          matInput
-          [min]="startDate"
-          [max]="endDate"
-          [matDatepicker]="picker"
-          (change)="getDate()"
-          disabled
-        />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker
-          #picker
-          startView="month"
-          disabled="false"
-        ></mat-datepicker> 
-      </mat-form-field>
-    -->
       <br />
       <br />
       <div *ngIf="showTime">
-        <h3>Available time slots for diet consultation</h3>
+        <h3>Book your Interview time</h3>
         <span *ngFor="let time of timeSlots">
           <button
             type="button"
@@ -114,12 +61,20 @@
           </button>
         </span>
         <br />
-        <h6 style="color: red">
-          *Limited slots available. First come First serve
-        </h6>
       </div>
+      <h4 class="notice" style="color: red; width: 333px">
+        *Email your Resumé at
+        <a
+          class="notice"
+          style="text-decoration: none; color: red"
+          target="_blank"
+          href="mailto:info@loopedincode.com"
+        >
+          info@loopedincode.com</a
+        >
+      </h4>
       <h3 *ngIf="showFinalStatement">
-        Date and time for your appointment: {{ date + "  " + time + " pm" }}
+        Your Interview is scheduled for: {{ date + "  " + time + " pm" }}
       </h3>
       <br /><br /><br /><br />
       <button (click)="onSubmit()" mat-raised-button color="primary">
@@ -130,10 +85,10 @@
 </div>
 <br />
 <br />
-<mat-card style="background-color: black; color: #39e8bd">
+<mat-card style="background-color: black; color: red">
   Developed by
   <a
-    style="background-color: black; color: #39e8bd; text-decoration-line: blink"
+    style="background-color: black; color: red; text-decoration-line: blink"
     href="mailto:info@loopedincode.com"
   >
     Looped In Code</a

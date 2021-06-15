@@ -18,3 +18,19 @@
 .example-full-width {
   width: 100%;
 }
+.notice {
+  animation-duration: 500ms;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes blink {
+  from {
+    color: red;
+    background-color: black;
+  }
+  to {
+    color: black;
+    background-color: red;
+  }
+}

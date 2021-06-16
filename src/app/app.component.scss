@@ -12,17 +12,19 @@ mat-label{
   font-weight: 500 !important;
 }
 .grid{
-  display: grid;
-  grid-template-columns: 18% 18% 18% 18% 18%;
+  display: flex;
+  // grid-template-columns: 18% 18% 18% 18% 18%;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 .grid1{
-  grid-template-columns: 22% 22% 22% 22% ;
+  // grid-template-columns: 22% 22% 22% 22% ;
 }
 h1{
   font-size: 48px;
   text-align: center;
   margin: 18px 0 36px !important;
+  line-height: 54px;
 }
 .matCard {
   width: 80vw;

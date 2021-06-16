@@ -4,7 +4,14 @@
   justify-content: center;
   // width: 100px;
 }
-
+body{
+  background-color: #a4a4a496 !important;
+}
+h1{
+  font-size: 48px;
+  text-align: center;
+  margin: 18px 0 36px !important;
+}
 .matCard {
   width: 80vw;
   margin-top: 8vh;
@@ -13,24 +20,21 @@
   min-width: 150px;
   max-width: 500px;
   width: 100%;
+  margin: auto;
 }
 
 .example-full-width {
   width: 100%;
 }
 .notice {
-  animation-duration: 500ms;
-  animation-name: blink;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
-@keyframes blink {
-  from {
-    color: red;
-    background-color: black;
-  }
-  to {
-    color: black;
-    background-color: red;
-  }
-}
+// @keyframes blink {
+//   from {
+//     color: red;
+//     background-color: black;
+//   }
+//   to {
+//     color: black;
+//     background-color: red;
+//   }
+// }

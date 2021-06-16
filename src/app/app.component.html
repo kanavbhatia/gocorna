@@ -8,8 +8,9 @@
   </mat-card>
 </div>
 <div class="parentCard" *ngIf="!dataUploaded">
-  <mat-card class="matCard">
-    <img style="width: 400px; height: 100px" src="../assets/logo.jpg" />
+  <mat-card style="padding: 3rem 3rem 2rem; width: fit-content" class="matCard">
+    <!-- <img style="width: 400px; height: 100px" src="../assets/logo.jpg" /> -->
+    <h1>Looped in Code</h1>
     <form [formGroup]="enquiryForm" class="example-form">
       <mat-form-field class="example-full-width">
         <mat-label>Name</mat-label>
@@ -18,7 +19,7 @@
           placeholder="Name"
           formControlName="name"
         /> </mat-form-field
-      ><mat-form-field class="example-full-width">
+      ><mat-form-field  class="example-full-width">
         <mat-label>Email</mat-label>
         <input
           matInput
@@ -27,7 +28,8 @@
           formControlName="email"
         />
       </mat-form-field>
-      <h2>Interview Slots</h2>
+      <h2 style="margin: 0  ;">Interview Slots</h2>
+      <p style="font-size: 12px;font-weight: 500;color: red;">All these are slots are based on EST so select slots based on that</p>
       <span
         *ngFor="
           let date of [
@@ -49,43 +51,46 @@
       <br />
       <div *ngIf="showTime">
         <h3>Book your Interview time</h3>
-        <span *ngFor="let time of timeSlots">
+        <span  style="margin: 1rem;" *ngFor="let time of timeSlots">
           <button
             type="button"
+            class="timeslot_buttons" 
             mat-stroked-button
             [disabled]="!time.available"
             (click)="timeSelected(time.time)"
             *ngIf="time.date == date"
+           
           >
             {{ time.time + " pm" }}
           </button>
         </span>
         <br />
       </div>
-      <h4 class="notice" style="color: red; width: 333px">
-        *Email your Resumé at
-        <a
-          class="notice"
-          style="text-decoration: none; color: red"
-          target="_blank"
-          href="mailto:info@loopedincode.com"
-        >
-          info@loopedincode.com</a
-        >
+      <h4 class="notice" style="color: red;">
+        <span>
+          *Email your Resumé at
+          <a
+            class="notice"
+            style="text-decoration: none; color: red"
+            target="_blank"
+            href="mailto:info@loopedincode.com"
+            type="email"
+          >
+            info@loopedincode.com</a
+          >
+          before the interview
+        </span>
       </h4>
       <h3 *ngIf="showFinalStatement">
         Your Interview is scheduled for: {{ date + "  " + time + " pm" }}
       </h3>
-      <br /><br /><br /><br />
       <button (click)="onSubmit()" mat-raised-button color="primary">
         Submit
       </button>
     </form>
   </mat-card>
 </div>
-<br />
-<br />
-<mat-card style="background-color: black; color: red">
+<!-- <mat-card style="background-color: black; color: red">
   Developed by
   <a
     style="background-color: black; color: red; text-decoration-line: blink"
@@ -93,4 +98,4 @@
   >
     Looped In Code</a
   >
-</mat-card>
+</mat-card> -->

@@ -8,12 +8,15 @@
   </mat-card>
 </div>
 <div class="parentCard" *ngIf="!dataUploaded">
-  <mat-card style="padding: 3rem 3rem 2rem; width: fit-content;max-width: 60%;" class="matCard">
+  <mat-card
+    style="padding: 3rem 3rem 2rem; width: fit-content; max-width: 60%"
+    class="matCard"
+  >
     <!-- <img style="width: 400px; height: 100px" src="../assets/logo.jpg" /> -->
     <h1>Looped in Code</h1>
     <form [formGroup]="enquiryForm" class="example-form">
       <mat-form-field class="example-full-width">
-        <mat-label >Name</mat-label>
+        <mat-label>Name</mat-label>
         <input
           matInput
           placeholder="Name"
@@ -58,7 +61,7 @@
         <!-- <div class="grid"> -->
         <span *ngFor="let time of timeSlots">
           <button
-            style="margin: 10px; width: 120px;"
+            style="margin: 10px; width: 120px"
             type="button"
             class="timeslot_buttons"
             mat-stroked-button
@@ -90,11 +93,7 @@
       <h3 *ngIf="showFinalStatement">
         Your Interview is scheduled for: {{ date + "  " + time + " pm" }}
       </h3>
-      <button
-        (click)="onSubmit()"
-        mat-raised-button
-        style="background-color: red; color: aliceblue"
-      >
+      <button (click)="onSubmit()" mat-raised-button color="primary">
         Submit
       </button>
     </form>

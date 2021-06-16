@@ -89,7 +89,11 @@
       <h3 *ngIf="showFinalStatement">
         Your Interview is scheduled for: {{ date + "  " + time + " pm" }}
       </h3>
-      <button (click)="onSubmit()" mat-raised-button color="primary">
+      <button
+        (click)="onSubmit()"
+        mat-raised-button
+        style="background-color: red; color: aliceblue"
+      >
         Submit
       </button>
     </form>

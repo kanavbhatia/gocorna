@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AppService } from './app.service';
 
 @Component({
@@ -8,7 +9,11 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private fb: FormBuilder, private appService: AppService) {}
+  constructor(
+    private fb: FormBuilder,
+    private appService: AppService,
+    private _snackBar: MatSnackBar
+  ) {}
   title = 'gocorna';
   date = '';
   time = '';
@@ -42,6 +47,13 @@ export class AppComponent {
       }
     );
   }
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+      panelClass: ['red-snackbar'],
+    });
+  }
+
   timeSelected(time: any) {
     this.time = time;
     this.showFinalStatement = true;
@@ -52,6 +64,15 @@ export class AppComponent {
   }
 
   onSubmit() {
+    if (this.enquiryForm.value.name == '') {
+      this.openSnackBar('Please specify the name', '');
+    } else if (this.enquiryForm.value.email == '') {
+      this.openSnackBar('Please specify the Email', '');
+    } else if (!this.date) {
+      this.openSnackBar('Please specify the date', '');
+    } else if (!this.time) {
+      this.openSnackBar('Please specify the timeslot', '');
+    }
     if (this.date && this.time) {
       this.enquiryForm.value.date = this.date;
       this.enquiryForm.value.time = this.time;
@@ -71,6 +92,7 @@ export class AppComponent {
       console.log(this.enquiryForm.value);
     } else {
       console.log('Incomplete data');
+      // this.openSnackBar('Please specify both date and time', '');
     }
   }
 }

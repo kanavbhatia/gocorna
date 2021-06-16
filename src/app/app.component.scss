@@ -1,26 +1,28 @@
+@import "../styles.scss";
+
 .parentCard {
   display: flex;
   align-items: center;
   justify-content: center;
   // width: 100px;
 }
-body{
+body {
   background-color: #a4a4a496 !important;
 }
-mat-label{
+mat-label {
   font-size: 18px !important;
   font-weight: 500 !important;
 }
-.grid{
+.grid {
   display: flex;
   // grid-template-columns: 18% 18% 18% 18% 18%;
   gap: 1rem;
   flex-wrap: wrap;
 }
-.grid1{
+.grid1 {
   // grid-template-columns: 22% 22% 22% 22% ;
 }
-h1{
+h1 {
   font-size: 48px;
   text-align: center;
   margin: 18px 0 36px !important;
@@ -39,8 +41,6 @@ h1{
 
 .example-full-width {
   width: 100%;
-}
-.notice {
 }
 // @keyframes blink {
 //   from {

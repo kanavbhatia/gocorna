@@ -19,7 +19,7 @@
           placeholder="Name"
           formControlName="name"
         /> </mat-form-field
-      ><mat-form-field  class="example-full-width">
+      ><mat-form-field class="example-full-width">
         <mat-label>Email</mat-label>
         <input
           matInput
@@ -28,8 +28,10 @@
           formControlName="email"
         />
       </mat-form-field>
-      <h2 style="margin: 0  ;">Interview Slots</h2>
-      <p style="font-size: 12px;font-weight: 500;color: darkslategray;">All these are slots are based on EST so select slots based on that</p>
+      <h2 style="margin: 0">Interview Slots</h2>
+      <p style="font-size: 12px; font-weight: 500; color: darkslategray">
+        All these are slots are based on EST so select slots based on that
+      </p>
       <div class="grid grid1">
         <span
           *ngFor="
@@ -53,24 +55,23 @@
       <br />
       <div *ngIf="showTime">
         <h3>Book your Interview time</h3>
-        <div class="grid">
-          <span  *ngFor="let time of timeSlots">
-            <button
-              type="button"
-              class="timeslot_buttons" 
-              mat-stroked-button
-              [disabled]="!time.available"
-              (click)="timeSelected(time.time)"
-              *ngIf="time.date == date"
-             
-            >
-              {{ time.time + " pm" }}
-            </button>
-          </span>
-        </div>
+        <!-- <div class="grid"> -->
+        <span *ngFor="let time of timeSlots">
+          <button
+            type="button"
+            class="timeslot_buttons"
+            mat-stroked-button
+            [disabled]="!time.available"
+            (click)="timeSelected(time.time)"
+            *ngIf="time.date == date"
+          >
+            {{ time.time + " pm" }}
+          </button>
+        </span>
+        <!-- </div> -->
         <br />
       </div>
-      <h4 class="notice" style="color: red;">
+      <h4 class="notice" style="color: red">
         <span>
           *Email your Resumé at
           <a

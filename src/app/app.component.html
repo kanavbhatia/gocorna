@@ -29,41 +29,45 @@
         />
       </mat-form-field>
       <h2 style="margin: 0  ;">Interview Slots</h2>
-      <p style="font-size: 12px;font-weight: 500;color: red;">All these are slots are based on EST so select slots based on that</p>
-      <span
-        *ngFor="
-          let date of [
-            '15 June 2021',
-            '16 June 2021',
-            '17 June 2021',
-            '18 June 2021',
-            '19 June 2021',
-            '20 June 2021'
-          ]
-        "
-      >
-        <button type="button" mat-stroked-button (click)="getDate(date)">
-          {{ date }}
-        </button>
-      </span>
+      <p style="font-size: 12px;font-weight: 500;color: darkslategray;">All these are slots are based on EST so select slots based on that</p>
+      <div class="grid grid1">
+        <span
+          *ngFor="
+            let date of [
+              '15 June 2021',
+              '16 June 2021',
+              '17 June 2021',
+              '18 June 2021',
+              '19 June 2021',
+              '20 June 2021'
+            ]
+          "
+        >
+          <button type="button" mat-stroked-button (click)="getDate(date)">
+            {{ date }}
+          </button>
+        </span>
+      </div>
       <br />
       <br />
       <br />
       <div *ngIf="showTime">
         <h3>Book your Interview time</h3>
-        <span  style="margin: 1rem;" *ngFor="let time of timeSlots">
-          <button
-            type="button"
-            class="timeslot_buttons" 
-            mat-stroked-button
-            [disabled]="!time.available"
-            (click)="timeSelected(time.time)"
-            *ngIf="time.date == date"
-           
-          >
-            {{ time.time + " pm" }}
-          </button>
-        </span>
+        <div class="grid">
+          <span  *ngFor="let time of timeSlots">
+            <button
+              type="button"
+              class="timeslot_buttons" 
+              mat-stroked-button
+              [disabled]="!time.available"
+              (click)="timeSelected(time.time)"
+              *ngIf="time.date == date"
+             
+            >
+              {{ time.time + " pm" }}
+            </button>
+          </span>
+        </div>
         <br />
       </div>
       <h4 class="notice" style="color: red;">

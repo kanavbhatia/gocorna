@@ -7,6 +7,18 @@
 body{
   background-color: #a4a4a496 !important;
 }
+mat-label{
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 18% 18% 18% 18% 18%;
+  gap: 1rem;
+}
+.grid1{
+  grid-template-columns: 22% 22% 22% 22% ;
+}
 h1{
   font-size: 48px;
   text-align: center;

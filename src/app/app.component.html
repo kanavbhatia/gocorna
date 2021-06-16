@@ -13,7 +13,7 @@
     <h1>Looped in Code</h1>
     <form [formGroup]="enquiryForm" class="example-form">
       <mat-form-field class="example-full-width">
-        <mat-label>Name</mat-label>
+        <mat-label >Name</mat-label>
         <input
           matInput
           placeholder="Name"
@@ -54,11 +54,11 @@
       <br />
       <br />
       <div *ngIf="showTime">
-        <h3>Book your Interview time</h3>
+        <h2>Book your Interview time</h2>
         <!-- <div class="grid"> -->
         <span *ngFor="let time of timeSlots">
           <button
-            style="margin: 10px"
+            style="margin: 10px; width: 120px;"
             type="button"
             class="timeslot_buttons"
             mat-stroked-button
